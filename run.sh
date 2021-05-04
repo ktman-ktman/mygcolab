@@ -4,7 +4,7 @@ PYTHONVERSION=$1
 
 # install software
 sudo apt update -y
-sudo apt upgrade -y
+#sudo apt upgrade -y
 sudo apt install -y \
 	curl \
 	fish \
@@ -25,8 +25,8 @@ export PATH"=${HOME}/.pyenv/bin:${PATH}"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-pyenv install $PYTHONVERSION
-pyenv global $PYTHONVERSION
+${HOME}/.pyenv/bin/pyenv install $PYTHONVERSION
+${HOME}/.pyenv/bin/pyenv global $PYTHONVERSION
 
 # install poetry
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
